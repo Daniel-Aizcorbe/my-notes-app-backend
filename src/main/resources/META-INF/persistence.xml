@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <persistence-unit name="db" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <properties>
+            <!-- ESTAS SON PROPIEDADES GENERALES -->
+
+            <!-- ESTA DEPENDE DEL MOTOR DE DB-->
+            <property name="hibernate.connection.driver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+            <property name="hibernate.connection.url" value="jdbc:sqlserver://localhost:1433/my-notes-app" />
+            <property name="usuario" value="sa" />
+            <property name="password" value="1554Daniel" />
+
+            <!-- ESTA DEPENDE DEL MOTOR DE DB-->
+            <property name="dialecto" value="org.hibernate.dialect.SQLServerDialect" />
+
+            <!-- ACA VAN LAS PROPIEDADES DE LA DB QUE ESTEMOS USANDO -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="use_sql_comments" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+
+        </properties>
+    </persistence-unit>
+</persistence>
